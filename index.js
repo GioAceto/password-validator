@@ -1,14 +1,15 @@
-import { validateCap, validateLow, validateNum, validateSpcl } from './sub-functions'
 
 const validatePassword = (pass) => {
-    while (pass.length > 8) {
-        if ((validateCap = true) &&
-            (validateLow = true) &&
-            (validateNum = true) &&
-            (validateSpcl = true)) {
-            return true
+    let num = 0
+    if (pass.length > 8) {
+        for (let i = 0; i < pass.length; i++) {
+            if (!isNaN(pass[i])) {
+                num++
+            }
         }
+        if (num > 0) { return true }
     }
     return false
 }
+
 module.exports = validatePassword
