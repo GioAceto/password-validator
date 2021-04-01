@@ -1,6 +1,8 @@
 const validatePassword = (pass) => {
     while (pass.length > 8) {
-        return true
+        if (cap > 0 && low > 0 && spcl > 0) {
+            return true
+        }
     }
     return false
 }
