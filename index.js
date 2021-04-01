@@ -2,10 +2,7 @@ import { validateCap, validateLow, validateNum, validateSpcl } from './sub-funct
 
 const validatePassword = (pass) => {
     while (pass.length > 8) {
-        return validateCap &&
-            validateLow &&
-            validateNum &&
-            validateSpcl
+        return validateCap && validateLow && validateNum && validateSpcl
     }
     return false
 }
