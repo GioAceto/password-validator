@@ -1,8 +1,9 @@
 const validatePassword = (pass) => {
     while (pass.length > 8) {
-        if (cap > 0 && low > 0 && spcl > 0 && num > 0) {
-            return true
-        }
+        return validateCap &&
+            validateLow &&
+            validateNum &&
+            validateSpcl
     }
     return false
 }
