@@ -1,22 +1,21 @@
 
-const validatePassword = (pass) => {
+const validatePassword = (pwd) => {
     let result = false
     let cap = 0
     let low = 0
     let num = 0
-    let spclArray = ['\!']
-    for (let i = 0; i < pass.length; i++) {
-        if (isNaN(pass[i]) && pass[i] === pass[i].toUpperCase()) {
-            for (let count = 0; count < spclArray.length; count++) {
-                if (spclArray[count] !== pass[i]) {
-                    cap++
-                }
+    let spclArray = ['\!', '\#', '\$', '\%']
+    for (let i = 0; i < pwd.length; i++) {
+        if (isNaN(pwd[i]) && spclArray.indexOf(pwd[i]) === -1) {
+            if (pwd[i] === pwd[i].toUpperCase()) {
+                cap++
+            } else if (pwd[i] === pwd[i].toLowerCase()) {
+                low++
             }
-
         }
     }
-    if ((pass.length > 8) && (cap > 0)) {
-        result = cap
+    if ((pwd.length > 8) && (cap > 0) && (low > 0)) {
+        result = true
     }
     return result
 }
@@ -31,3 +30,4 @@ module.exports = validatePassword
             //if (!isNaN(pass[i])) {
             //num++
             //}
+//"\'",'\(',\),\*,\+,\,\-,\.,\/,\:,\;,\<,\=,\>,\?,\@,\[,\,\\,\],\^,\_,\`,\{,\|,\},\~']
