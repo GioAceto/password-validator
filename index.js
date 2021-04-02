@@ -5,7 +5,7 @@ const validatePassword = (pwd) => {
     let low = 0
     let num = 0
     let spcl = 0
-    let spclArray = ['\!', '\"', '\#', '\$', '\%', '\&', '\'', '\(', '\)', '\*',]
+    let spclArray = ['\!', '\"', '\#', '\$', '\%', '\&', '\'', '\(', '\)', '\*', '\+', '\-', '\.', '\/', '\:', '\;', '\<', '\=', '\>', '\?', '\@', '\[', '\\', '\]', '\^', '\_', '\`', '\{', '\|', '\}', '\~']
     for (let i = 0; i < pwd.length; i++) {
         if (isNaN(pwd[i]) && spclArray.indexOf(pwd[i]) === -1) {
             if (pwd[i] === pwd[i].toUpperCase()) {
